@@ -1,13 +1,9 @@
 # bubbles
 
 > [after seeing Jimmy 'tie off' the his boat at the dock]
->
 > Bubbles: What the hell is that?
->
 > McNulty: Baltimore knot.
->
 > Bubbles: Baltimore knot? What the hell is a Baltimore knot?
->
 > McNulty: I dunno, but it's never the same thing twice.
 >
 > *"The Wire: Undertow (#2.5)" (2003)*
