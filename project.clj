@@ -26,12 +26,23 @@
                          :output-to "resources/public/js/compiled/bubbles.js"
                          :output-dir "resources/public/js/compiled/out"
                          :source-map-timestamp true }}
+
              {:id "min"
               :source-paths ["src"]
               :compiler {:output-to "resources/public/js/compiled/bubbles.js"
                          :main bubbles.core
                          :optimizations :advanced
-                         :pretty-print false}}]}
+                         :pretty-print false}}
 
-  :figwheel {:css-dirs ["resources/public/css"] ;; watch and update CSS
+             {:id "test"
+              :source-paths ["src" "test"]
+              :compiler {:output-to "target/test.js"
+                         :main "reason.runner"
+                         :optimizations :whitespace
+                         :pretty-print true}}]}
+
+  :profiles {:dev {:dependencies [[doo "0.1.4"]]
+                   :plugins [[lein-doo "0.1.4"]]}}
+
+  :figwheel {:css-dirs ["resources/public/css"]
              :nrepl-port 7002})
