@@ -39,7 +39,7 @@
 
              {:id "test"
               :source-paths ["src" "test"]
-              :compiler {:main "reason.runner"
+              :compiler {:main bubbles.runner
                          :output-to "target/test.js"
                          :optimizations :whitespace
                          :pretty-print true}}]}
