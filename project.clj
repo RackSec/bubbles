@@ -24,7 +24,7 @@
 
               :figwheel true
 
-              :compiler {:main bubbles.core
+              :compiler {:main "bubbles.core"
                          :asset-path "js/compiled/out"
                          :output-to "resources/public/js/compiled/bubbles.js"
                          :output-dir "resources/public/js/compiled/out"
@@ -33,14 +33,14 @@
 
              {:id "min"
               :source-paths ["src"]
-              :compiler {:main bubbles.core
+              :compiler {:main "bubbles.core"
                          :output-to "resources/public/js/compiled/bubbles.js"
                          :optimizations :advanced
                          :pretty-print false}}
 
              {:id "test"
               :source-paths ["src" "test"]
-              :compiler {:main bubbles.runner
+              :compiler {:main "bubbles.runner"
                          :output-to "target/test.js"
                          :optimizations :whitespace
                          :pretty-print true}}]}
