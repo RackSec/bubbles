@@ -1,5 +1,7 @@
 # bubbles
 
+[![Build Status](https://travis-ci.org/RackSec/bubbles.svg?branch=master)](https://travis-ci.org/RackSec/bubbles)
+
 > [after seeing Jimmy 'tie off' the his boat at the dock]
 >
 > * *Bubbles:* What the hell is that?
