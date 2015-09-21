@@ -32,15 +32,15 @@
 
              {:id "min"
               :source-paths ["src"]
-              :compiler {:output-to "resources/public/js/compiled/bubbles.js"
-                         :main bubbles.core
+              :compiler {:main bubbles.core
+                         :output-to "resources/public/js/compiled/bubbles.js"
                          :optimizations :advanced
                          :pretty-print false}}
 
              {:id "test"
               :source-paths ["src" "test"]
-              :compiler {:output-to "target/test.js"
-                         :main "reason.runner"
+              :compiler {:main "reason.runner"
+                         :output-to "target/test.js"
                          :optimizations :whitespace
                          :pretty-print true}}]}
 
