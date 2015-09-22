@@ -1,10 +1,16 @@
 (ns bubbles.xml-test
-  (:require [bubbles.xml :as bx]
-            [bubbles.test-macros :refer-macros [defsample]]
-            [cljs.test :refer-macros [deftest]]))
+  (:require
+   [bubbles.xml :as bx]
+   [cljs.test :refer-macros [deftest testing is are]])
+  (:require-macros
+   [bubbles.test-macros :as t]))
 
-(defsample soap-request
+(t/defsample soap-request
   "test/SOAPRequest.xml")
 
-(defsample soap-response
+(t/defsample soap-response
   "test/SOAPResponse.xml")
+
+(deftest parse-xml
+  (is (= (bx/parse-xml soap-request)
+         [])))
