@@ -18,6 +18,8 @@
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
+  ;; (use 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl)
+
   :cljsbuild {
     :builds [{:id "dev"
               :source-paths ["src"]
