@@ -14,7 +14,7 @@
   :plugins [[lein-cljsbuild "1.1.0"]
             [lein-figwheel "0.3.9"]]
 
-  :source-paths ["src"]
+  :source-paths ["src" "test"]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
