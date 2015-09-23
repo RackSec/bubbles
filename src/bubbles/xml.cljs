@@ -1,6 +1,7 @@
 (ns bubbles.xml
   "Fanciness related to parsing and serializing XML."
-  (:require [hickory.core :as h]))
+  (:require
+   [hickory.core :as h]))
 
 (defn parse-xml
   "Parse an XML string into DOM objects.
