@@ -21,13 +21,17 @@
        form))
    row))
 
-(defn parse-xml
+(defn ^:private parse-xml
   "Parse an XML string into DOM objects.
 
   TODO: consider submitting this upstream to Hickory; maybe give
   parse-dom-with-domparser an optional doctype arg."
   [xml-string]
   (.parseFromString (js/DOMParser.) xml-string "text/xml"))
+
+(def xml->
+  "Parse an XML string into a usable Hiccup Clojure data structure."
+  (comp remove-whitespace as-hiccup parse-xml))
 
 (defn ->xml
   "Turns a Clojure data structure into an XML document."
