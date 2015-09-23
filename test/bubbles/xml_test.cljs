@@ -30,7 +30,6 @@
      [:m:getstockpriceresponse {} [:m:price {} "34.5"]]]]])
 
 (deftest xml->-test
-  (is (= (bx/xml-> soap-request)
-         parsed-soap-request))
-  (is (= (bx/xml-> soap-response)
-         parsed-soap-response)))
+  (doseq [[xml-string parsed] [[soap-request parsed-soap-request]
+                               [soap-response parsed-soap-response]]]
+    (is (= (bx/xml-> xml-string) parsed))))
