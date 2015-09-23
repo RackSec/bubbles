@@ -32,7 +32,7 @@
 
 (def xml->
   "Parse an XML string into a usable Hiccup Clojure data structure."
-  (comp remove-whitespace as-hiccup parse-xml))
+  (comp remove-whitespace h/as-hiccup parse-xml))
 
 (defn ->xml
   "Turns a Clojure data structure into an XML document."
