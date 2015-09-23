@@ -26,8 +26,8 @@
 
   TODO: consider submitting this upstream to Hickory; maybe give
   parse-dom-with-domparser an optional doctype arg."
-  [s]
-  (.parseFromString (js/DOMParser.) s "text/xml"))
+  [xml-string]
+  (.parseFromString (js/DOMParser.) xml-string "text/xml"))
 
 (defn ->xml
   "Turns a Clojure data structure into some XML."
