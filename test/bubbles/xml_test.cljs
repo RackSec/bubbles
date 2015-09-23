@@ -20,4 +20,11 @@
            [:soap:body
             {:xmlns:m "http://www.example.org/stock"}
             [:m:getstockprice {}
-             [:m:stockname {} "RAX"]]]]])))
+             [:m:stockname {} "RAX"]]]]]))
+  (is (= (bx/xml-> soap-response)
+         [[:soap:envelope
+           {:xmlns:soap "http://www.w3.org/2001/12/soap-envelope",
+            :soap:encodingstyle "http://www.w3.org/2001/12/soap-encoding"}
+           [:soap:body
+            {:xmlns:m "http://www.example.org/stock"}
+            [:m:getstockpriceresponse {} [:m:price {} "34.5"]]]]])))
