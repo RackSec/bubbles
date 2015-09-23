@@ -1,6 +1,7 @@
 (ns bubbles.xml
   "Fanciness related to parsing and serializing XML."
   (:require
+   [clojure.walk :as walk]
    [hickory.core :as h]))
 
 ;; whitespace? & remove-whitespace were copied from crunch and
