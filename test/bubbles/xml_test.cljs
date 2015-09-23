@@ -1,8 +1,9 @@
 (ns bubbles.xml-test
   (:require
    [bubbles.xml :as bx]
-   [cljs.test :refer-macros [deftest testing is are]])
+   [hickory.core :as h])
   (:require-macros
+   [cljs.test :refer [deftest is]]
    [bubbles.test-macros :as t]))
 
 (t/defsample soap-request
