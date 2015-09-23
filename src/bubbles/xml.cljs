@@ -30,6 +30,6 @@
   (.parseFromString (js/DOMParser.) xml-string "text/xml"))
 
 (defn ->xml
-  "Turns a Clojure data structure into some XML."
+  "Turns a Clojure data structure into an XML document."
   [data]
   )
