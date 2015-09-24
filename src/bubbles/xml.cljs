@@ -39,7 +39,8 @@
     (instance? js/Document string-or-document) string-or-document))
 
 (def xml->
-  "Parse an XML string into a usable Hiccup Clojure data structure."
+  "Parse an XML string or document into a usable Hiccup Clojure data
+  structure."
   (comp remove-whitespace h/as-hiccup maybe-parse-xml))
 
 (defn ->xml
