@@ -32,4 +32,5 @@
 (deftest xml->-test
   (doseq [[xml-string parsed] [[soap-request parsed-soap-request]
                                [soap-response parsed-soap-response]]]
-    (is (= (bx/xml-> xml-string) parsed))))
+    (is (= (bx/xml-> xml-string) parsed)
+        "parsing an xml string")))
