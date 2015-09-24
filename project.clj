@@ -9,7 +9,10 @@
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
 
                  ;; DOM/XML parsing
-                 [hickory "0.5.4"]]
+                 [hickory "0.5.4"]
+
+                 ;; Debugging and logging
+                 [com.taoensso/timbre "4.1.1"]]
 
   :plugins [[lein-cljsbuild "1.1.0"]
             [lein-figwheel "0.3.9"]]
