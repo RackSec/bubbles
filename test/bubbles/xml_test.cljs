@@ -29,7 +29,7 @@
      {:xmlns:m "http://www.example.org/stock"}
      [:m:getstockpriceresponse {} [:m:price {} "34.5"]]]]])
 
-(deftest xml->-test
+(deftest xml-tests
   (doseq [[xml-string parsed] [[soap-request parsed-soap-request]
                                [soap-response parsed-soap-response]]]
     (is (= (bx/xml-> xml-string) parsed)
