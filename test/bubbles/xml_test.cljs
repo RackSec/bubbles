@@ -33,4 +33,7 @@
   (doseq [[xml-string parsed] [[soap-request parsed-soap-request]
                                [soap-response parsed-soap-response]]]
     (is (= (bx/xml-> xml-string) parsed)
-        "parsing an xml string")))
+        "parsing an xml string")
+    (let [document (bx/parse-xml xml-string)]
+      (is (= (bx/xml-> document) parsed)
+          "parsing a document"))))
