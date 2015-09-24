@@ -2,7 +2,8 @@
   "Fanciness related to parsing and serializing XML."
   (:require
    [clojure.walk :as walk]
-   [hickory.core :as h]))
+   [hickory.core :as h]
+   [taoensso.timbre :refer-macros [info spy]]))
 
 ;; whitespace? & remove-whitespace were copied from crunch and
 ;; submitted for consideration to upstream hickory:
