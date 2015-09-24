@@ -30,9 +30,17 @@
   [xml-string]
   (.parseFromString (js/DOMParser.) xml-string "text/xml"))
 
+(defn ^:private maybe-parse-xml
+  "If passed a string, parse as XML; if Document, return verbatim,
+  otherwise; raise an exception."
+  [string-or-document]
+  (cond
+    (string? string-or-document) (parse-xml string-or-document)
+    (instance? js/Document string-or-document) string-or-document))
+
 (def xml->
   "Parse an XML string into a usable Hiccup Clojure data structure."
-  (comp remove-whitespace h/as-hiccup parse-xml))
+  (comp remove-whitespace h/as-hiccup maybe-parse-xml))
 
 (defn ->xml
   "Turns a Clojure data structure into an XML document."
