@@ -36,4 +36,6 @@
         "parsing an xml string")
     (let [document (bx/parse-xml xml-string)]
       (is (= (bx/xml-> document) parsed)
-          "parsing a document"))))
+          "parsing a document"))
+    (is (= (-> xml-string bx/xml-> bx/->xml-doc bx/xml->) parsed)
+        "round trip from parsed form to document and back again")))
