@@ -8,8 +8,9 @@
                  [org.clojure/clojurescript "1.7.122"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
 
-                 ;; DOM/XML parsing
+                 ;; DOM/XML parsing/serialization
                  [hickory "0.5.4"]
+                 [hiccups "0.3.0"]
 
                  ;; Debugging and logging
                  [com.taoensso/timbre "4.1.1"]]
