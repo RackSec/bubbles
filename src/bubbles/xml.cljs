@@ -3,6 +3,8 @@
   (:require
    [clojure.walk :as walk]
    [hickory.core :as h]
+   [clojure.browser.dom :as cdom]
+   [goog.dom.xml :as gxml]
    [taoensso.timbre :refer-macros [info spy]]))
 
 ;; whitespace? & remove-whitespace were copied from crunch and
@@ -44,7 +46,25 @@
   structure."
   (comp remove-whitespace h/as-hiccup maybe-parse-xml))
 
-(defn ->xml
-  "Turns a Clojure data structure into an XML document."
+(defn ->xml-structure
+  [])
+
+(defn xml-struct->xml-doc
+  "Turns a Clojure Hiccup-style data structure representing an XML
+  document into an actual XML document."
   [data]
-  )
+  (let [doc (gxml/createDocument)]
+    (walk/postwalk
+     (fn [elem]
+       (info elem)
+       (cond
+         (vector? elem)
+         (let [[tag attrs & children] elem
+               node (.createElement doc)]
+           (apply cdom/append node children))
+
+         (string? elem)
+         (.createTextNode doc elem)
+
+         :else elem)) ;; keyword (tag) or map (attrs); pass
+     data)))
