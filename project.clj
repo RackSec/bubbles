@@ -10,7 +10,6 @@
 
                  ;; DOM/XML parsing/serialization
                  [hickory "0.5.4"]
-                 [hiccups "0.3.0"]
 
                  ;; Debugging and logging
                  [com.taoensso/timbre "4.1.1"]]
